@@ -25,6 +25,7 @@ export default StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         alignSelf: 'center',
+        textAlign: 'center',
         color: '#337ab7',
         marginVertical: 20,
     },
@@ -47,13 +48,24 @@ export default StyleSheet.create({
         marginLeft: 20, // Espaço entre o divisor e o texto
         borderRadius: 10,
     },
+    dateTimePicker: {
+        width: '100%',
+        fontSize: 20,
+        marginVertical: 50,
+    },
+    selectedDateTime: {
+        fontSize: 20,
+        textAlign: 'center',
+        paddingVertical: 10,
+        marginTop: 15,
+    },
     enterButton: {
         width: '60%',
         paddingVertical: 12,
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: 90,
+        marginVertical: 100,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -65,16 +77,4 @@ export default StyleSheet.create({
         fontSize: 18,
         fontWeight: 'regular',
     },
-    textBox: {
-        width: '100%',
-        height: 50, // Altura fixa para a caixa de texto
-        borderColor: '#337ab7',
-        fontSize: 20,
-        borderWidth: 2,
-        padding: 10,
-        marginVertical: 50,
-        textAlignVertical: 'top',
-        lineHeight: 30,
-    },
-
 });

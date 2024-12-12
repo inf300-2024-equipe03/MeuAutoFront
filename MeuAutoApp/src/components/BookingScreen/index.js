@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
 import styles from './style';3
@@ -9,7 +9,7 @@ const BookingScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.carIcon} />
             <View style={styles.divider} />
-            <Text style={styles.title}>Onde vocẽ está?</Text>
+            <Text style={styles.title}>Onde você está?</Text>
 
             <MapView
                 style={styles.map}
@@ -26,7 +26,18 @@ const BookingScreen = ({ navigation }) => {
                 />
             </MapView>
 
-            <TouchableOpacity style={styles.enterButton}>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.textBox}
+                    placeholder="Digite seu endereço"
+                    placeholderTextColor="#888"
+                />
+            </View>
+
+            <TouchableOpacity 
+                style={styles.enterButton}
+                onPress={() => navigation.navigate('AutoshopScreen')}
+            >
                 <Text style={styles.enterButtonText}>Buscar Oficinas</Text>
             </TouchableOpacity>
 

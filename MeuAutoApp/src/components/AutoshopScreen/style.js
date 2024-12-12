@@ -6,7 +6,7 @@ export default StyleSheet.create({
         backgroundColor: '#f0f0f0',
         alignItems: 'center',                      
         paddingTop: 20, // Espaçamento para acomodar o ícone no topo
-        paddingBottom: 100,
+        paddingBottom: 20,
         margin: 10,
     },
     header: {
@@ -25,6 +25,8 @@ export default StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         alignSelf: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
         color: '#337ab7',
         marginVertical: 20,
     },
@@ -47,34 +49,24 @@ export default StyleSheet.create({
         marginLeft: 20, // Espaço entre o divisor e o texto
         borderRadius: 10,
     },
-    enterButton: {
-        width: '60%',
-        paddingVertical: 12,
-        backgroundColor: '#0056B3',
-        borderRadius: 25,
-        alignItems: 'center',
-        marginVertical: 90,
+    scrollView: {
+        flex: 1,
+        width: '80%',
+    },
+    autoshopsItem: {
+        backgroundColor: '#fff',
+        width: '100%',
+        borderRadius: 8,
+        marginBottom: 16,
+        padding: 16,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
-        shadowRadius: 5,
-        elevation: 5,
+        shadowRadius: 4,
+        elevation: 2, 
     },
-    enterButtonText: {
-        color: '#FFFF', // Cor do texto no botão "Entrar"
-        fontSize: 18,
-        fontWeight: 'regular',
+    autoshopsText: {
+        fontSize: 16,
+        marginBottom: 4,
     },
-    textBox: {
-        width: '100%',
-        height: 50, // Altura fixa para a caixa de texto
-        borderColor: '#337ab7',
-        fontSize: 20,
-        borderWidth: 2,
-        padding: 10,
-        marginVertical: 50,
-        textAlignVertical: 'top',
-        lineHeight: 30,
-    },
-
 });

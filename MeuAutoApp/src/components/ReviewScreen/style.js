@@ -53,7 +53,7 @@ export default StyleSheet.create({
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: 90,
+        marginVertical: 0,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -65,16 +65,17 @@ export default StyleSheet.create({
         fontSize: 18,
         fontWeight: 'regular',
     },
-    textBox: {
-        width: '100%',
-        height: 50, // Altura fixa para a caixa de texto
-        borderColor: '#337ab7',
-        fontSize: 20,
-        borderWidth: 2,
-        padding: 10,
-        marginVertical: 50,
-        textAlignVertical: 'top',
-        lineHeight: 30,
+    subcontainer: {
+        flex: 1,
+        width: '93%',
+        alignItems: 'left',
+        padding: 20,
+        backgroundColor: '#f0f0f0',
     },
-
+    item: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 40,
+        color: '#337ab7',
+    },
 });
