@@ -27,36 +27,7 @@ const SelectAutoScreen = ({ userName }) => {
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
             <View style={styles.divider} />
             <Text style={styles.title}>Selecione o seu carro:</Text>
-            <Picker
-                selectedValue={selectedItem1}
-                style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem1(itemValue)}
-                itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
-            >
-                {list1.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
-                ))}
-            </Picker>
-            <Picker
-                selectedValue={selectedItem2}
-                style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem2(itemValue)}
-                itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
-            >
-                {list2.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
-                ))}
-            </Picker>
-            <Picker
-                selectedValue={selectedItem3}
-                style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem3(itemValue)}
-                itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
-            >
-                {list3.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
-                ))}
-            </Picker>
+
             <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('HomePage')}>
                 <Text style={styles.enterButtonText}>Começar</Text>
             </TouchableOpacity>
