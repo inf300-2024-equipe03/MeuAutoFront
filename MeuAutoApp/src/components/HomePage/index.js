@@ -1,38 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+
 import styles from './style';
 
-const SelectAutoScreen = ({ userName }) => {
-    const [list1, setList1] = useState(['Marca','Audi', 'BMW', 'Mercedes']);
-    const [list2, setList2] = useState(['Modelo','Option 2A', 'Option 2B', 'Option 2C']);
-    const [list3, setList3] = useState(['Ano/Versão','Option 3A', 'Option 3B', 'Option 3C']);
-    const [selectedItem1, setSelectedItem1] = useState('');
-    const [selectedItem2, setSelectedItem2] = useState('');
-    const [selectedItem3, setSelectedItem3] = useState('');
-
-    useEffect(() => {
-        // Simulação de fetch para listas
-        // fetch('backend_endpoint')
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     setList1(data.list1);
-        //     setList2(data.list2);
-        //     setList3(data.list3);
-        //   });
-    }, []);
-
+const HomePage = ({ navigation }) => {
     return (
-        <View style={styles.container1}>
+        <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
             <View style={styles.divider} />
-            <Text style={styles.title}>Selecione o seu carro:</Text>
+            <Text style={styles.title}>Olá, João</Text>
 
-            <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('HomePage')}>
-                <Text style={styles.enterButtonText}>Começar</Text>
+            <View style={styles.subcontainer}>
+                <Image source={require('../../../assets/steering-icon.png')} style={styles.iconLeft}/>
+                <View>
+                    <Text style={styles.subtitle}>Meu carro: Jeep Compass</Text>
+                    <Text style={styles.text}>Ano: 2021/2022</Text>
+                    <Text style={styles.text}>km: 75.765</Text>
+                </View>
+            </View>
+
+            <View style={styles.subcontainer}>
+                <Image source={require('../../../assets/maintenance-icon.png')} style={styles.iconLeft2} />
+                <Text style={styles.text}>Próxima revisão: 81.500 ou 05/01/2025</Text>
+            </View>
+
+            <View style={styles.subcontainer}>
+                <Image source={require('../../../assets/insurance-icon.png')} style={styles.iconLeft2} />
+                <Text style={styles.text}>Seguro: Ativo</Text>
+            </View>
+
+            <View style={styles.subcontainer}>
+                <Image source={require('../../../assets/price-icon.png')} style={styles.iconLeft2} />
+                <Text style={styles.text}>Valor de mercado: R$132.300,00</Text>
+            </View>
+
+            <View style={styles.subcontainer}>
+                <Image source={require('../../../assets/infractions-icon.png')} style={styles.iconLeft2} />
+                <Text style={styles.text}>Você não possui infrações</Text>
+            </View>
+            
+            <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('MenuScreen')}>
+                <Text style={styles.enterButtonText}>Serviços</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
-export default SelectAutoScreen;
+export default HomePage;

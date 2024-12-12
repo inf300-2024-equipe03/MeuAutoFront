@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import EntryScreen from './src/components/EntryScreen';
 import LoginScreen from './src/components/LoginScreen';
 import SelectAutoScreen from './src/components/SelectAutoScreen';
+import HomePage from './src/components/HomePage';
+import MenuScreen from './src/components/MenuScreen';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +33,22 @@ export default function App() {
         component={SelectAutoScreen}
         options={{  headerShown: false}}
         />
+  
+        {/* Tela de Home */}
+        <Stack.Screen
+        name="HomePage"
+        component={HomePage}
+        options={{  headerShown: false}}
+        />
+
+        {/* Tela de Menu */}
+        <Stack.Screen
+        name="MenuScreen"
+        component={MenuScreen}
+        options={{  headerShown: false}}
+        />
+        
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

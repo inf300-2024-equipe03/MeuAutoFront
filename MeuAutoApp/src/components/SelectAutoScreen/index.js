@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import styles from './style';
 
-const SelectAutoScreen = ({ userName }) => {
+const SelectAutoScreen = ({ navigation, userName }) => {
     const [list1, setList1] = useState(['Marca','Audi', 'BMW', 'Mercedes']);
     const [list2, setList2] = useState(['Modelo','Option 2A', 'Option 2B', 'Option 2C']);
     const [list3, setList3] = useState(['Ano/Versão','Option 3A', 'Option 3B', 'Option 3C']);
@@ -23,7 +23,7 @@ const SelectAutoScreen = ({ userName }) => {
     }, []);
 
     return (
-        <View style={styles.container1}>
+        <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
             <View style={styles.divider} />
             <Text style={styles.title}>Selecione o seu carro:</Text>

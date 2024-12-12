@@ -1,11 +1,21 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    container1: {
+    container: {
         flex: 1,
-        backgroundColor: '#FFFF',
-        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        alignItems: 'center',                      
         paddingTop: 20, // Espaçamento para acomodar o ícone no topo
+        paddingBottom: 100,
+    },
+    subcontainer: {
+        flexDirection: 'row', // Ícone e texto lado a lado
+        alignItems: 'center',
+        justifyContent: 'left',
+        width: '90%',
+        paddingVertical: 10,
+        borderBottomWidth:5,
+        borderBottomColor: '#ddd', // Divisão entre linhas
     },
     icon: {
         width: 93, // Tamanho pequeno para o ícone
@@ -13,6 +23,16 @@ export default StyleSheet.create({
         position: 'absolute', // Posicionamento no canto superior esquerdo
         top: 70,
         left: 20,
+    },
+    iconLeft: {
+        width: 80,
+        height: 80,
+        marginRight: 10, // Espaço entre o ícone e o texto
+    },
+    iconLeft2: {
+        width: 40,
+        height: 40,
+        marginRight: 10, // Espaço entre o ícone e o texto
     },
     divider: {
         height: 5,
@@ -29,25 +49,26 @@ export default StyleSheet.create({
         marginLeft: 20,
         fontWeight: 'bold',
         marginTop: 20,
-        marginBottom: 70,
+        marginBottom: 0,
         color: '#007AFF', // Azul consistente com o tema
     },
-    picker: {
-        height: 50,
-        width: '60%', // Adiciona largura proporcional
-        paddingHorizontal: 0,
-        marginBottom: 120,
-        borderWidth: 1, // Borda azul ao redor do Picker
-        borderColor: '#007AFF',
-        borderRadius: 20,
-        color: '#007AFF', // Cor do texto no Picker
-        backgroundColor: 'transparent', // Fundo branco para destacar
-        justifyContent: 'center', // Centraliza o texto selecionado
-    },
-    pickerItem: {
+    subtitle: {
         fontSize: 20,
-        color: '#007AFF', // Cor dos itens do menu
+        alignSelf: 'left',
+        marginLeft: 0,
         fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 0,
+        color: '#007AFF', // Azul consistente com o tema
+    },
+    text: {
+        fontSize: 16,
+        alignSelf: 'left',
+        marginLeft: 0,
+        fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 10,
+        color: '#007AFF', // Azul consistente com o tema
     },
     enterButton: {
         width: '60%',
@@ -55,7 +76,7 @@ export default StyleSheet.create({
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: -20,
+        marginVertical: 90,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
