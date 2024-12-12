@@ -6,6 +6,7 @@ import LoginScreen from './src/components/LoginScreen';
 import SelectAutoScreen from './src/components/SelectAutoScreen';
 import HomePage from './src/components/HomePage';
 import MenuScreen from './src/components/MenuScreen';
+import BookingScreen from './src/components/BookingScreen';
 
 const Stack = createStackNavigator();
 
@@ -47,7 +48,13 @@ export default function App() {
         component={MenuScreen}
         options={{  headerShown: false}}
         />
-        
+
+        {/* Tela de Agendamento */}
+        <Stack.Screen
+        name="BookingScreen"
+        component={BookingScreen}
+        options={{  headerShown: false}}
+        />        
         
       </Stack.Navigator>
     </NavigationContainer>

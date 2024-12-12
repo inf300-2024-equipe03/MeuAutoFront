@@ -7,6 +7,7 @@ export default StyleSheet.create({
         alignItems: 'center',                      
         paddingTop: 20, // Espaçamento para acomodar o ícone no topo
         paddingBottom: 100,
+        margin: 10,
     },
     subcontainer: {
         flexDirection: 'row', // Ícone e texto lado a lado
@@ -36,7 +37,7 @@ export default StyleSheet.create({
     },
     divider: {
         height: 5,
-        backgroundColor: '#007AFF', // Azul consistente com as telas anteriores
+        backgroundColor: '#337ab7', // Azul consistente com as telas anteriores
         width: '30%',
         alignSelf: 'left',
         marginTop: 100, // Espaço entre o ícone e o divisor
@@ -50,7 +51,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 20,
         marginBottom: 0,
-        color: '#007AFF', // Azul consistente com o tema
+        color: '#337ab7', // Azul consistente com o tema
     },
     subtitle: {
         fontSize: 20,
@@ -59,16 +60,16 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 20,
         marginBottom: 0,
-        color: '#007AFF', // Azul consistente com o tema
+        color: '#337ab7', // Azul consistente com o tema
     },
     text: {
-        fontSize: 16,
+        fontSize: 15,
         alignSelf: 'left',
         marginLeft: 0,
         fontWeight: 'bold',
         marginTop: 20,
         marginBottom: 10,
-        color: '#007AFF', // Azul consistente com o tema
+        color: '#337ab7', // Azul consistente com o tema
     },
     enterButton: {
         width: '60%',

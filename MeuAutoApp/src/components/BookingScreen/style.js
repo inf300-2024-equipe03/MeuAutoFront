@@ -4,16 +4,61 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f0f0f0',
-        alignItems: 'center',
+        alignItems: 'center',                      
         paddingTop: 20, // Espaçamento para acomodar o ícone no topo
+        paddingBottom: 100,
         margin: 10,
     },
-    icon: {
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    carIcon: {
         width: 93, // Tamanho pequeno para o ícone
         height: 32,
         position: 'absolute', // Posicionamento no canto superior esquerdo
         top: 70,
         left: 20,
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        color: '#337ab7',
+        marginVertical: 20,
+    },
+    grid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+    },
+    gridItem: {
+        width: '48%',
+        aspectRatio: 1,
+        backgroundColor: '#fff',
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20,
+        padding: 10,
+        elevation: 5,
+    },
+    icon: {
+        width: 60,
+        height: 60,
+        marginBottom: 10,
+    },
+    icon2: {
+        width: 100,
+        height: 60,
+        marginBottom: 10,
+    },
+    gridLabel: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#337ab7',
+        textAlign: 'center',
     },
     divider: {
         height: 5,
@@ -24,39 +69,13 @@ export default StyleSheet.create({
         marginLeft: 20, // Espaço entre o divisor e o texto
         borderRadius: 10,
     },
-    title: {
-        fontSize: 30,
-        alignSelf: 'left',
-        marginLeft: 20,
-        fontWeight: 'bold',
-        marginTop: 20,
-        marginBottom: 70,
-        color: '#337ab7', // Azul consistente com o tema
-    },
-    picker: {
-        height: 50,
-        width: '60%', // Adiciona largura proporcional
-        paddingHorizontal: 0,
-        marginBottom: 120,
-        borderWidth: 1, // Borda azul ao redor do Picker
-        borderColor: '#007AFF',
-        borderRadius: 20,
-        color: '#007AFF', // Cor do texto no Picker
-        backgroundColor: 'transparent', // Fundo branco para destacar
-        justifyContent: 'center', // Centraliza o texto selecionado
-    },
-    pickerItem: {
-        fontSize: 20,
-        color: '#007AFF', // Cor dos itens do menu
-        fontWeight: 'bold',
-    },
     enterButton: {
         width: '60%',
         paddingVertical: 12,
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: -20,
+        marginVertical: 90,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
