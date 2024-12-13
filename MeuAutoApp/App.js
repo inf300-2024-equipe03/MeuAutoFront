@@ -54,8 +54,34 @@ export default function App() {
         name="BookingScreen"
         component={BookingScreen}
         options={{  headerShown: false}}
-        />        
-        
+        />
+
+        {/* Tela de Oficina */}
+        <Stack.Screen
+          name="AutoshopScreen"
+          component={AutoshopScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+        {/* Tela de Seleção de Data */}
+        <Stack.Screen
+          name="SelectdateScreen"
+          component={SelectdateScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+
+        {/* Tela de Comentários */}
+        <Stack.Screen
+          name="CommentScreen"
+          component={CommentScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+
+        {/* Tela de Revisão */}
+        <Stack.Screen
+          name="ReviewScreen"
+          component={ReviewScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
