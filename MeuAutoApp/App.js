@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, Suspense } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import EntryScreen from './src/components/EntryScreen';
@@ -12,6 +12,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
+    <Suspense>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="EntryScreen">
         {/* Tela de Entrada */}
@@ -58,5 +59,6 @@ export default function App() {
         
       </Stack.Navigator>
     </NavigationContainer>
+    </Suspense>
   );
 }

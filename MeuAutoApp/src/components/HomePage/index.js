@@ -1,14 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from './style';
 
 const HomePage = ({ navigation }) => {
+    // Definindo o estado para armazenar os dados do usuário e token
+    const [username, setUsername] = useState('');
+    const [token, setToken] = useState('');
+
+    useEffect(() => {
+        // Função assíncrona definida dentro do useEffect
+        const loadData = async () => {
+            try {
+                const nameFromStorage = await AsyncStorage.getItem('USERNAME');
+                const tokenFromStorage = await AsyncStorage.getItem('TOKEN');
+
+                if (nameFromStorage) {
+                    setUsername(nameFromStorage); // Atualiza o nome do usuário
+                }
+                if (tokenFromStorage) {
+                    setToken(tokenFromStorage); // Atualiza o token
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dados do AsyncStorage', error);
+            }
+        };
+
+        // Chama a função loadData assim que o componente for montado
+        loadData();
+    }, []); // O array vazio [] garante que o efeito seja executado uma vez após o componente ser montado
+
     return (
         <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
             <View style={styles.divider} />
-            <Text style={styles.title}>Olá, João</Text>
+            <Text style={styles.title}>Olá, {username}</Text>
 
             <View style={styles.subcontainer}>
                 <Image source={require('../../../assets/steering-icon.png')} style={styles.iconLeft}/>
