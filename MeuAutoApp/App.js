@@ -7,6 +7,10 @@ import SelectAutoScreen from './src/components/SelectAutoScreen';
 import HomePage from './src/components/HomePage';
 import MenuScreen from './src/components/MenuScreen';
 import BookingScreen from './src/components/BookingScreen';
+import AutoshopScreen from './src/components/AutoshopScreen';
+import SelectdateScreen from './src/components/SelectdateScreen';
+import CommentScreen from './src/components/CommentScreen';
+import ReviewScreen from './src/components/ReviewScreen';
 
 const Stack = createStackNavigator();
 
@@ -55,8 +59,34 @@ export default function App() {
         name="BookingScreen"
         component={BookingScreen}
         options={{  headerShown: false}}
-        />        
-        
+        />
+
+        {/* Tela de Oficina */}
+        <Stack.Screen
+          name="AutoshopScreen"
+          component={AutoshopScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+        {/* Tela de Seleção de Data */}
+        <Stack.Screen
+          name="SelectdateScreen"
+          component={SelectdateScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+
+        {/* Tela de Comentários */}
+        <Stack.Screen
+          name="CommentScreen"
+          component={CommentScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+
+        {/* Tela de Revisão */}
+        <Stack.Screen
+          name="ReviewScreen"
+          component={ReviewScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
       </Stack.Navigator>
     </NavigationContainer>
     </Suspense>

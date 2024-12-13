@@ -4,8 +4,8 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f0f0f0',
-        alignItems: 'center',                      
-        paddingTop: 20, // Espaçamento para acomodar o ícone no topo
+        alignItems: 'center',
+        paddingTop: 20,
         paddingBottom: 100,
         margin: 10,
     },
@@ -15,9 +15,9 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     carIcon: {
-        width: 93, // Tamanho pequeno para o ícone
+        width: 93,
         height: 32,
-        position: 'absolute', // Posicionamento no canto superior esquerdo
+        position: 'absolute',
         top: 70,
         left: 20,
     },
@@ -40,12 +40,17 @@ export default StyleSheet.create({
     },
     divider: {
         height: 5,
-        backgroundColor: '#337ab7', // Azul consistente com as telas anteriores
+        backgroundColor: '#337ab7',
         width: '30%',
         alignSelf: 'left',
-        marginTop: 100, // Espaço entre o ícone e o divisor
-        marginLeft: 20, // Espaço entre o divisor e o texto
+        marginTop: 100,
+        marginLeft: 20,
         borderRadius: 10,
+    },
+    map: {
+        width: '100%', // Full width of the container
+        height: 300, // Example fixed height
+        marginVertical: 20, // Space above and below the map
     },
     enterButton: {
         width: '60%',
@@ -53,7 +58,7 @@ export default StyleSheet.create({
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: 90,
+        marginVertical: 40,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -61,13 +66,13 @@ export default StyleSheet.create({
         elevation: 5,
     },
     enterButtonText: {
-        color: '#FFFF', // Cor do texto no botão "Entrar"
+        color: '#FFFF',
         fontSize: 18,
         fontWeight: 'regular',
     },
     textBox: {
         width: '100%',
-        height: 50, // Altura fixa para a caixa de texto
+        height: 50,
         borderColor: '#337ab7',
         fontSize: 20,
         borderWidth: 2,
@@ -76,5 +81,4 @@ export default StyleSheet.create({
         textAlignVertical: 'top',
         lineHeight: 30,
     },
-
 });
