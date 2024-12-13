@@ -7,6 +7,10 @@ import SelectAutoScreen from './src/components/SelectAutoScreen';
 import HomePage from './src/components/HomePage';
 import MenuScreen from './src/components/MenuScreen';
 import BookingScreen from './src/components/BookingScreen';
+import AutoshopScreen from './src/components/AutoshopScreen';
+import SelectdateScreen from './src/components/SelectdateScreen';
+import CommentScreen from './src/components/CommentScreen';
+import ReviewScreen from './src/components/ReviewScreen';
 
 const Stack = createStackNavigator();
 
