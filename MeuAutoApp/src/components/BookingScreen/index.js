@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
-import styles from './style';3
+import styles from './style';
 
 const BookingScreen = ({ navigation }) => {
     return (
