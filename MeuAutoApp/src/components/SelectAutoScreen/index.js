@@ -78,7 +78,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
         selectedBrandId,
         selectedModelId,
         selectedVersionId,    
-        })
+        })  
     }
 
     return (
