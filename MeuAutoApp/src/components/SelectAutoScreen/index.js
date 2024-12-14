@@ -74,6 +74,13 @@ const SelectAutoScreen = ({ navigation, userName }) => {
         loadVersionByBrandAndModel();
     }, [selectedBrandId, selectedModelId]);
 
+    const handleNextStep = () => {navigation.navigate('SelectAutoScreenStep2', { 
+        selectedBrandId,
+        selectedModelId,
+        selectedVersionId,    
+        })
+    }
+
     return (
         <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
@@ -109,8 +116,8 @@ const SelectAutoScreen = ({ navigation, userName }) => {
                     <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
-            <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('HomePage')}>
-                <Text style={styles.enterButtonText}>Começar</Text>
+            <TouchableOpacity style={styles.enterButton} onPress={handleNextStep}>
+                <Text style={styles.enterButtonText}>Próximo</Text>
             </TouchableOpacity>
         </View>
     );

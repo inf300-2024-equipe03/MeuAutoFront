@@ -20,7 +20,7 @@ const ReviewScreen = ({navigation}) => {
           Alert.alert(message);
         }
         // Navegação para a página EntryScreen
-        navigation.navigate('EntryScreen');
+        navigation.navigate('HomePage');
 }
 
     return (
