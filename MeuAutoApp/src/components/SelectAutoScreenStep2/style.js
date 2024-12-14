@@ -56,7 +56,7 @@ export default StyleSheet.create({
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: -20,
+        marginVertical: 100,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -67,5 +67,11 @@ export default StyleSheet.create({
         color: '#FFFF', // Cor do texto no botão "Entrar"
         fontSize: 18,
         fontWeight: 'regular',
+    },
+    item: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        marginBottom: 40,
+        color: '#337ab7',
     },
 });

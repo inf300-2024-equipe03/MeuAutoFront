@@ -29,10 +29,14 @@ const HomePage = ({ navigation }) => {
             }
         };
 
+        // Chama a função loadData assim que o componente for montado
+        loadData();
+    }, []);
+
+    useEffect( () => {
         const loadCar = async () => {
             try {
                 const response = await CarResource.findCarByUser();
-                console.log(response)
                 if (response && response.data) {
                     setCar(response.data); // Atualiza as informações do carro
                 } else {
@@ -44,10 +48,8 @@ const HomePage = ({ navigation }) => {
             }
         };
 
-        // Chama a função loadData assim que o componente for montado
-        loadData();
         loadCar();
-    }, []);
+    }, [username])
 
 
 
@@ -63,8 +65,8 @@ const HomePage = ({ navigation }) => {
                     <View style={styles.subcontainer}>
                         <Image source={require('../../../assets/steering-icon.png')} style={styles.iconLeft}/>
                         <View>
-                            <Text style={styles.subtitle}>Meu carro: {car.model || 'Modelo não disponível'}</Text>
-                            <Text style={styles.text}>Ano: {car.year || 'Ano não disponível'}</Text>
+                            <Text style={styles.subtitle}>Meu carro: {car.modelDescription}</Text>
+                            <Text style={styles.text}>Ano: {car.year}</Text>
                             <Text style={styles.text}>km: {car.km || 'km não disponível'}</Text>
                         </View>
                     </View>
@@ -81,7 +83,7 @@ const HomePage = ({ navigation }) => {
 
                     <View style={styles.subcontainer}>
                         <Image source={require('../../../assets/price-icon.png')} style={styles.iconLeft2} />
-                        <Text style={styles.text}>Valor de mercado: {car.marketValue || 'Valor não disponível'}</Text>
+                        <Text style={styles.text}>Valor de mercado: {car.value|| 'Valor não disponível'}</Text>
                     </View>
 
                     <View style={styles.subcontainer}>

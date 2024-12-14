@@ -35,7 +35,7 @@ export default StyleSheet.create({
     },
     picker: {
         height: 50,
-        width: '90%', // Adiciona largura proporcional
+        width: '100%', // Adiciona largura proporcional
         paddingHorizontal: 0,
         marginBottom: 120,
         borderWidth: 1, // Borda azul ao redor do Picker
@@ -47,6 +47,11 @@ export default StyleSheet.create({
     },
     pickerItem: {
         fontSize: 18,
+        color: '#007AFF', // Cor dos itens do menu
+        fontWeight: 'regular',
+    },
+    pickerItem2: {
+        fontSize: 16,
         color: '#007AFF', // Cor dos itens do menu
         fontWeight: 'regular',
     },

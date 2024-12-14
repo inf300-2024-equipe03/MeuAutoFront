@@ -68,5 +68,11 @@ export default StyleSheet.create({
     autoshopsText: {
         fontSize: 16,
         marginBottom: 4,
+        fontWeight: 'regular',
+    },
+    autoshopsTitle: {
+        fontSize: 16,
+        marginBottom: 4,
+        fontWeight: 'bold',
     },
 });

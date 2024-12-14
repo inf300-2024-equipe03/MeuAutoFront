@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, TextInput, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, Keyboard, TouchableWithoutFeedback, Image, TextInput, Alert } from 'react-native';
 import styles from './style';
 import UserResource from '../../resources/UserResource';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -38,40 +38,42 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.googleButton} onPress={() => {}}>
-        <Image source={require('../../../assets/google-fav.png')} style={styles.icon} />
-        <Text style={styles.googleButtonText}>Entrar com Google</Text>
-      </TouchableOpacity>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.googleButton} onPress={() => {}}>
+          <Image source={require('../../../assets/google-fav.png')} style={styles.icon} />
+          <Text style={styles.googleButtonText}>Entrar com Google</Text>
+        </TouchableOpacity>
+        
+        {/* <TouchableOpacity style={styles.emailButton} onPress={() => {}}>
+          <Image source={require('../../../assets/mail-fav.png')} style={styles.icon} />
+          <Text style={styles.emailButtonText}>Entrar com e-mail</Text>
+        </TouchableOpacity> */}
+        
+        <TextInput
+          style={styles.textBox}
+          placeholder="E-mail"
+          placeholderTextColor="#888"
+          onChangeText={(text) => setEmail(text)}
+        />
 
-      <TouchableOpacity style={styles.emailButton} onPress={() => {}}>
-        <Image source={require('../../../assets/mail-fav.png')} style={styles.icon} />
-        <Text style={styles.emailButtonText}>Entrar com e-mail</Text>
-      </TouchableOpacity>
+        <TextInput
+          style={styles.textBox}
+          placeholder="Senha"
+          placeholderTextColor="#888"
+          onChangeText={(text) => setPassword(text)}
+          secureTextEntry
+        />
 
-      <TextInput
-        style={styles.textBox}
-        placeholder="Email"
-        placeholderTextColor="#888"
-        onChangeText={(text) => setEmail(text)}
-      />
-
-      <TextInput
-        style={styles.textBox}
-        placeholder="Senha"
-        placeholderTextColor="#888"
-        onChangeText={(text) => setPassword(text)}
-        secureTextEntry
-      />
-
-      <TouchableOpacity style={styles.enterButton} onPress={login}>
-        <Text style={styles.enterButtonText}>Entrar</Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('RegisterScreen')}>
-        <Text style={styles.enterButtonText}>Criar conta</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.enterButton} onPress={login}>
+          <Text style={styles.enterButtonText}>Entrar</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.createButton} onPress={() => navigation.navigate('RegisterScreen')}>
+          <Text style={styles.enterButtonText}>Criar conta</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

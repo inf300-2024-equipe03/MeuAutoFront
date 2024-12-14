@@ -10,7 +10,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
     const [versions, setVersions] = useState([]);
     const [selectedBrandId, setSelectedBrandId] = useState(null);
     const [selectedModelId, setSelectedModelId] = useState(null);
-    const [selectedVersion, setSelectedVersionId] = useState(null);
+    const [selectedVersionId, setSelectedVersionId] = useState(null);
 
     useEffect(() => {
         const loadBrands = async () => {
@@ -74,6 +74,13 @@ const SelectAutoScreen = ({ navigation, userName }) => {
         loadVersionByBrandAndModel();
     }, [selectedBrandId, selectedModelId]);
 
+    const handleNextStep = () => {navigation.navigate('SelectAutoScreenStep2', { 
+        selectedBrandId,
+        selectedModelId,
+        selectedVersionId,
+        })  
+    }
+
     return (
         <View style={styles.container}>
             <Image source={require('../../../assets/auto-icon.png')} style={styles.icon} />
@@ -93,14 +100,14 @@ const SelectAutoScreen = ({ navigation, userName }) => {
                 selectedValue={selectedModelId}
                 style={styles.picker}
                 onValueChange={(itemValue) => setSelectedModelId(itemValue)}
-                itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
+                itemStyle={styles.pickerItem2} // Estiliza os itens do dropdown
             >
                 {modelsInBrand.map((item, index) => (
                     <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
             <Picker
-                selectedValue={selectedVersion}
+                selectedValue={selectedVersionId}
                 style={styles.picker}
                 onValueChange={(itemValue) => setSelectedVersionId(itemValue)}
                 itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
@@ -109,8 +116,8 @@ const SelectAutoScreen = ({ navigation, userName }) => {
                     <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
-            <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('HomePage')}>
-                <Text style={styles.enterButtonText}>Começar</Text>
+            <TouchableOpacity style={styles.enterButton} onPress={handleNextStep}>
+                <Text style={styles.enterButtonText}>Próximo</Text>
             </TouchableOpacity>
         </View>
     );

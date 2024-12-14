@@ -12,6 +12,8 @@ import SelectdateScreen from './src/components/SelectdateScreen';
 import CommentScreen from './src/components/CommentScreen';
 import ReviewScreen from './src/components/ReviewScreen';
 import RegisterScreen from './src/components/RegisterScreen';
+import SelectAutoScreenStep2 from './src/components/SelectAutoScreenStep2';
+
 
 const Stack = createStackNavigator();
 
@@ -46,6 +48,13 @@ export default function App() {
         name="SelectAutoScreen"
         component={SelectAutoScreen}
         options={{  headerShown: false}}
+        />
+
+        {/* Tela de Confirmação de Automóvel */}
+        <Stack.Screen
+          name="SelectAutoScreenStep2"
+          component={SelectAutoScreenStep2}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
         />
   
         {/* Tela de Home */}
