@@ -93,7 +93,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
                 selectedValue={selectedModelId}
                 style={styles.picker}
                 onValueChange={(itemValue) => setSelectedModelId(itemValue)}
-                itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
+                itemStyle={styles.pickerItem2} // Estiliza os itens do dropdown
             >
                 {modelsInBrand.map((item, index) => (
                     <Picker.Item key={item.id} label={item.name} value={item.id} />

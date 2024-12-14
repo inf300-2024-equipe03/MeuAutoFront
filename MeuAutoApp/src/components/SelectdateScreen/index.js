@@ -4,8 +4,10 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 import styles from './style';
 
-const SelectdateScreen = ({ navigation }) => {
+const SelectdateScreen = ({ navigation, route }) => {
   const [date, setDate] = useState(new Date());
+
+  const { autoshopsId } = route.params;
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -48,7 +50,7 @@ const SelectdateScreen = ({ navigation }) => {
 
       <TouchableOpacity 
                 style={styles.enterButton}
-                onPress={() => navigation.navigate('CommentScreen')}
+                onPress={() => navigation.navigate('CommentScreen', { autoshopsId, date: date.toISOString()})}
             >
                 <Text style={styles.enterButtonText}>Próximo</Text>
         </TouchableOpacity>

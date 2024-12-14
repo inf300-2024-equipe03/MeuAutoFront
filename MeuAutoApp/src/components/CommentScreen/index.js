@@ -1,9 +1,13 @@
-import React from 'react';
+import { React, useState} from 'react';
 import { View, Text, Image, TouchableOpacity, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 import styles from './style';
 
-const CommentScreen = ({ navigation }) => {
+const CommentScreen = ({ navigation, route }) => {
+
+  const { autoshopsId, date } = route.params;
+  const [comment, setComment] = useState('');
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -16,11 +20,12 @@ const CommentScreen = ({ navigation }) => {
           placeholder="Há algo que você gostaria de informar a oficina? Digite aqui..."
           multiline
           numberOfLines={50}
+          onChangeText={setComment}
         />
 
         <TouchableOpacity 
           style={styles.enterButton}
-          onPress={() => navigation.navigate('ReviewScreen')}
+          onPress={() => navigation.navigate('ReviewScreen', { autoshopsId, date, comment })}
         >
           <Text style={styles.enterButtonText}>Próximo</Text>
         </TouchableOpacity>
