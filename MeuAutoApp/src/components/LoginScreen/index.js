@@ -15,7 +15,7 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.emailButtonText}>Entrar com e-mail</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('SelectAutoScreen')}>
+      <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('RegisterScreen')}>
         <Text style={styles.enterButtonText}>Entrar</Text>
       </TouchableOpacity>
     </View>

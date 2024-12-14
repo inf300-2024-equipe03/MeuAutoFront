@@ -11,6 +11,7 @@ import AutoshopScreen from './src/components/AutoshopScreen';
 import SelectdateScreen from './src/components/SelectdateScreen';
 import CommentScreen from './src/components/CommentScreen';
 import ReviewScreen from './src/components/ReviewScreen';
+import RegisterScreen from './src/components/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,13 @@ export default function App() {
           options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
         />
 
+        {/* Tela de Registro */}
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegisterScreen}
+          options={{ headerShown: false }} // Oculta o cabeçalho, se necessário
+        />
+        
         {/* Tela de Seleção de Automóvel */}
         <Stack.Screen
         name="SelectAutoScreen"
