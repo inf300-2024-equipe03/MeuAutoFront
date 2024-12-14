@@ -5,8 +5,8 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#007AFF', // Degradê será aplicado no componente, não no estilo diretamente
-    paddingHorizontal: 20, // Garante espaçamento lateral
+    backgroundColor: '#007AFF',
+    paddingHorizontal: 20,
   },
   googleButton: {
     width: '90%',
@@ -14,7 +14,8 @@ export default StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 25,
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: -100,
+    marginVertical: 80,
     flexDirection: 'row',
     justifyContent: 'center',
     shadowColor: '#000', // Sombras para o botão
@@ -51,6 +52,19 @@ export default StyleSheet.create({
     shadowRadius: 5,
     elevation: 5,
   },
+  createButton: {
+    width: '90%',
+    paddingVertical: 12,
+    backgroundColor: '#0056B3',
+    borderRadius: 25,
+    alignItems: 'center',
+    marginTop: 100,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 5,
+  },
   googleButtonText: {
     color: '#000',
     fontSize: 18,
@@ -72,5 +86,21 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
     resizeMode: 'contain',
+  },
+  textBox: {
+    width: '90%',
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 25,
+    marginVertical: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 5,
+    fontSize: 16,
+    color: '#000',
+    textAlign: 'center',
   },
 });
