@@ -45,7 +45,39 @@ const CarResource = {
                 Authorization: `Bearer ${token}`, // Adiciona o token no header
             }
         });
-    }
+    },
+
+    getCar: async (brandId, modelId, versionId) => {
+        // Recupera o token do AsyncStorage
+        const token = await AsyncStorage.getItem('TOKEN');
+
+        return await api.get(`/car/brands/${brandId}/model/${modelId}/version/${versionId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`, // Adiciona o token no header
+            }
+        });
+    },
+
+    createCar: async (value, brand, modelName, year, fuel) => {
+        // Recupera o token do AsyncStorage
+        const token = await AsyncStorage.getItem('TOKEN');
+        // Faz a requisição POST com o cabeçalho Authorization
+        return await api.post(
+            '/car',  // Endereço da API
+            { 
+                value,
+                brand,
+                modelName,
+                year,
+                fuel
+            },  // Corpo da requisição
+            { 
+                headers: {
+                    Authorization: `Bearer ${token}`,  // Cabeçalho com o token
+                }
+            }
+        );
+    },
 
 };
 

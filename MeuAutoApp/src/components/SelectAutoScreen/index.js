@@ -10,7 +10,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
     const [versions, setVersions] = useState([]);
     const [selectedBrandId, setSelectedBrandId] = useState(null);
     const [selectedModelId, setSelectedModelId] = useState(null);
-    const [selectedVersion, setSelectedVersionId] = useState(null);
+    const [selectedVersionId, setSelectedVersionId] = useState(null);
 
     useEffect(() => {
         const loadBrands = async () => {
@@ -77,7 +77,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
     const handleNextStep = () => {navigation.navigate('SelectAutoScreenStep2', { 
         selectedBrandId,
         selectedModelId,
-        selectedVersionId,    
+        selectedVersionId,
         })  
     }
 
@@ -107,7 +107,7 @@ const SelectAutoScreen = ({ navigation, userName }) => {
                 ))}
             </Picker>
             <Picker
-                selectedValue={selectedVersion}
+                selectedValue={selectedVersionId}
                 style={styles.picker}
                 onValueChange={(itemValue) => setSelectedVersionId(itemValue)}
                 itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
