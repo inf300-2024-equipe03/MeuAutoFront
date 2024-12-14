@@ -33,30 +33,13 @@ export default StyleSheet.create({
         marginBottom: 70,
         color: '#337ab7', // Azul consistente com o tema
     },
-    picker: {
-        height: 50,
-        width: '60%', // Adiciona largura proporcional
-        paddingHorizontal: 0,
-        marginBottom: 120,
-        borderWidth: 1, // Borda azul ao redor do Picker
-        borderColor: '#007AFF',
-        borderRadius: 20,
-        color: '#007AFF', // Cor do texto no Picker
-        backgroundColor: 'transparent', // Fundo branco para destacar
-        justifyContent: 'center', // Centraliza o texto selecionado
-    },
-    pickerItem: {
-        fontSize: 20,
-        color: '#007AFF', // Cor dos itens do menu
-        fontWeight: 'bold',
-    },
     enterButton: {
         width: '60%',
         paddingVertical: 12,
         backgroundColor: '#0056B3',
         borderRadius: 25,
         alignItems: 'center',
-        marginVertical: -20,
+        marginVertical: 140,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -68,4 +51,21 @@ export default StyleSheet.create({
         fontSize: 18,
         fontWeight: 'regular',
     },
+    inputContainer: {
+        width: '100%',
+        alignItems: 'center',
+        marginVertical: 10,
+    },
+    input: {
+        width: '80%',
+        height: 40,
+        borderColor: '#337ab7',
+        borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        marginVertical: 30,
+        backgroundColor: '#fff',
+        fontSize: 20, // Tamanho da fonte 
+        fontColor: '#ffff', // Cor do texto
+    }
 });

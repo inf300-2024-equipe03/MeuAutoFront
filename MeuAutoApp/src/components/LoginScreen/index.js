@@ -67,6 +67,10 @@ const LoginScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.enterButton} onPress={login}>
         <Text style={styles.enterButtonText}>Entrar</Text>
       </TouchableOpacity>
+      
+      <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('RegisterScreen')}>
+        <Text style={styles.enterButtonText}>Criar conta</Text>
+      </TouchableOpacity>
     </View>
   );
 };
