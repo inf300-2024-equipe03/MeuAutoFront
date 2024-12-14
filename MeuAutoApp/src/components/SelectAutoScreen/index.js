@@ -2,25 +2,77 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import styles from './style';
+import CarResource from '../../resources/CarResource';
 
 const SelectAutoScreen = ({ navigation, userName }) => {
-    const [list1, setList1] = useState(['Marca','Audi', 'BMW', 'Mercedes']);
-    const [list2, setList2] = useState(['Modelo','Option 2A', 'Option 2B', 'Option 2C']);
-    const [list3, setList3] = useState(['Ano/Versão','Option 3A', 'Option 3B', 'Option 3C']);
-    const [selectedItem1, setSelectedItem1] = useState('');
-    const [selectedItem2, setSelectedItem2] = useState('');
-    const [selectedItem3, setSelectedItem3] = useState('');
+    const [brands, setBrands] = useState([]);
+    const [modelsInBrand, setModelsInBrand] = useState([]);
+    const [versions, setVersions] = useState([]);
+    const [selectedBrandId, setSelectedBrandId] = useState(null);
+    const [selectedModelId, setSelectedModelId] = useState(null);
+    const [selectedVersion, setSelectedVersionId] = useState(null);
 
     useEffect(() => {
-        // Simulação de fetch para listas
-        // fetch('backend_endpoint')
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     setList1(data.list1);
-        //     setList2(data.list2);
-        //     setList3(data.list3);
-        //   });
+        const loadBrands = async () => {
+            try {
+                const response = await CarResource.findBrands();
+                if (response && response.data) {
+                    setBrands(response.data); // Atualiza as informações do carro
+                } else {
+                    setBrands([]); // Se não houver dados, define car como null
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dados da marca:', error);
+                setBrands([]); // Caso ocorra erro, define car como null
+            }
+        };
+
+        loadBrands();
     }, []);
+
+    useEffect(() => {
+        const loadModelsByBrandId = async () => {
+            if(selectedBrandId !== null){
+                try {
+                const response = await CarResource.findModelsByBrandId(selectedBrandId);
+                if (response && response.data) {
+                    setModelsInBrand(response.data); // Atualiza as informações do carro
+                } else {
+                    setModelsInBrand([]); // Se não houver dados, define car como null
+                }
+                } catch (error) {
+                    console.error('Erro ao carregar dados dos modelos:', error);
+                    setModelsInBrand([]); // Caso ocorra erro, define car como null
+                }
+            }else{
+                setModelsInBrand([]); // Caso ocorra erro, define car como null
+            }
+        };
+
+        loadModelsByBrandId();
+    }, [selectedBrandId]);
+
+    useEffect(() => {
+        const loadVersionByBrandAndModel = async () => {
+            if(selectedBrandId !== null && selectedModelId !== null){
+                try {
+                    const response = await CarResource.findVersionByBrandAndModel(selectedBrandId, selectedModelId);
+                    if (response && response.data) {
+                        setVersions(response.data); // Atualiza as informações do carro
+                    } else {
+                        setVersions([]); // Se não houver dados, define car como null
+                }
+                } catch (error) {
+                    console.error('Erro ao carregar dados da versoes:', error);
+                    setVersions([]); // Caso ocorra erro, define car como null
+            }
+            }else{
+                setVersions([]); // Caso ocorra erro, define car como null
+            }
+        };
+
+        loadVersionByBrandAndModel();
+    }, [selectedBrandId, selectedModelId]);
 
     return (
         <View style={styles.container}>
@@ -28,33 +80,33 @@ const SelectAutoScreen = ({ navigation, userName }) => {
             <View style={styles.divider} />
             <Text style={styles.title}>Selecione o seu carro:</Text>
             <Picker
-                selectedValue={selectedItem1}
+                selectedValue={selectedBrandId}
                 style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem1(itemValue)}
+                onValueChange={(itemValue) => setSelectedBrandId(itemValue)}
                 itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
             >
-                {list1.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
+                {brands.map((item, index) => (
+                    <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
             <Picker
-                selectedValue={selectedItem2}
+                selectedValue={selectedModelId}
                 style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem2(itemValue)}
+                onValueChange={(itemValue) => setSelectedModelId(itemValue)}
                 itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
             >
-                {list2.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
+                {modelsInBrand.map((item, index) => (
+                    <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
             <Picker
-                selectedValue={selectedItem3}
+                selectedValue={selectedVersion}
                 style={styles.picker}
-                onValueChange={(itemValue) => setSelectedItem3(itemValue)}
+                onValueChange={(itemValue) => setSelectedVersionId(itemValue)}
                 itemStyle={styles.pickerItem} // Estiliza os itens do dropdown
             >
-                {list3.map((item, index) => (
-                    <Picker.Item key={index} label={item} value={item} />
+                {versions.map((item, index) => (
+                    <Picker.Item key={item.id} label={item.name} value={item.id} />
                 ))}
             </Picker>
             <TouchableOpacity style={styles.enterButton} onPress={() => navigation.navigate('HomePage')}>

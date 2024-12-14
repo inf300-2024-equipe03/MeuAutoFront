@@ -26,7 +26,7 @@ export default StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        alignSelf: 'center',
+        alignSelf: 'left',
         marginLeft: 20,
         fontWeight: 'bold',
         marginTop: 20,
@@ -35,7 +35,7 @@ export default StyleSheet.create({
     },
     picker: {
         height: 50,
-        width: '90%', // Adiciona largura proporcional
+        width: '60%', // Adiciona largura proporcional
         paddingHorizontal: 0,
         marginBottom: 120,
         borderWidth: 1, // Borda azul ao redor do Picker
@@ -46,9 +46,9 @@ export default StyleSheet.create({
         justifyContent: 'center', // Centraliza o texto selecionado
     },
     pickerItem: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#007AFF', // Cor dos itens do menu
-        fontWeight: 'regular',
+        fontWeight: 'bold',
     },
     enterButton: {
         width: '60%',
